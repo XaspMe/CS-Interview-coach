@@ -45,7 +45,18 @@ namespace CS_Interview_coach
             }
         }
 
-        
+        public void GenPrev()
+        {
+            QAInstance instance = QADictionary.BackToPreviousQuestion();
+            if (instance != null)
+            {
+                AnswerTB.Text = instance.Answer;
+                QuestionTB.Text = instance.Question;
+            }
+        }
+
+
+
         /// <summary>
         /// Go to next question
         /// </summary>
@@ -74,19 +85,14 @@ namespace CS_Interview_coach
         /// <param name="e"></param>
         private void Previous_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            QAInstance instance = QADictionary.BackToPreviousQuestion();
-            if (instance != null)
-            {
-                AnswerTB.Text = instance.Answer;
-                QuestionTB.Text = instance.Question;
-            }
+            GenPrev();
         }
 
         /// <summary>
         /// Invert .isenabled state for UiElements
         /// </summary>
         /// <param name="controls"></param>
-        private void ControlEnableInvert(FrameworkElement[] controls) 
+        private void ControlEnableInvert(FrameworkElement[] controls)
         {
             foreach (var item in controls)
             {
@@ -171,6 +177,14 @@ namespace CS_Interview_coach
                 AnswerTB.FontSize = Size;
                 QuestionTB.FontSize = Size;
             }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Right)
+                GenNext();
+            if (e.Key == Key.Left)
+                GenPrev();
         }
     }
 }
