@@ -1,0 +1,17 @@
+﻿<Window x:Class="CS_Interview_coach.Add"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CS_Interview_coach"
+        mc:Ignorable="d"
+        Title="New question" MinHeight="410" MaxHeight="410" MinWidth="690" MaxWidth="690" Height="410" Width="687" Icon="Pictures/Icon.png">
+    
+    <Grid>
+        <Label Content="Question:" HorizontalAlignment="Center" Margin="304,3,305,0" VerticalAlignment="Top" Width="73"/>
+        <Label Content="Answer:" HorizontalAlignment="Center" Margin="309,159,305,0" VerticalAlignment="Top" Width="68"/>
+        <TextBox Name="AddQuestion" HorizontalAlignment="Left" Height="119" Margin="10,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="651"/>
+        <TextBox Name="AddAnswer" HorizontalAlignment="Left" Height="119" Margin="10,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="651"/>
+        <Image HorizontalAlignment="Left" Height="45" Margin="316,316,0,0" VerticalAlignment="Top" Width="47" Source="Pictures/Ok.png" MouseDown="Image_MouseDown"/>
+    </Grid>
+</Window>

@@ -1,0 +1,36 @@
+﻿<Window x:Class="CS_Interview_coach.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CS_Interview_coach"
+        mc:Ignorable="d"
+        Title="C# Interview coach" MinHeight="437" Height="437" MinWidth="711" Width="711" Icon="Pictures/Icon.png">
+    <Grid Margin="0,1,0,-1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <Image Name="Next" HorizontalAlignment="Right" Height="78" Margin="0,17,10,166" VerticalAlignment="Center" Width="77" Source="Pictures/Next.png" MouseDown="Next_MouseDown" Grid.Row="1"/>
+        <Image Name="Previous" HorizontalAlignment="Left" Height="78" Margin="10,17,0,166" VerticalAlignment="Center" Width="77" Source="Pictures/Next.png" RenderTransformOrigin="0.5,0.5" MouseDown="Previous_MouseDown" Grid.Row="1">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="180"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="Pictures/Next.png"/>
+            </Image.OpacityMask>
+        </Image>
+        <TextBox BorderThickness="0" IsReadOnly="True" TextAlignment="Center" VerticalContentAlignment="Center"  Name="QuestionTB" Margin="103,10,106,10" TextWrapping="Wrap" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" Foreground="Black"  FontSize="20"/>
+        <TextBox BorderThickness="0" IsReadOnly="True" TextAlignment="Center" VerticalContentAlignment="Center" Name="AnswerTB" Margin="103,10,106,10" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" Grid.Row="1" FontSize="20"/>
+        <Button Name="AddButton" Content="Add question" HorizontalAlignment="Right" Margin="0,10,11,0" VerticalAlignment="Top" Width="76" Height="22" Click="Button_Click_1"/>
+        <Button Name="EditButton" Content="Edit" HorizontalAlignment="Right" Margin="0,37,11,0" VerticalAlignment="Top" Width="76" Click="Button_Click_3" Height="20"/>
+        <CheckBox IsChecked="True"  Content="Answers" HorizontalAlignment="Right" Margin="0,63,12,0" Height="15" VerticalAlignment="Top" Width="71" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
+        <Slider Value="16" ValueChanged="Slider_ValueChanged" Minimum="10" Maximum="30" Margin="0,0,11,32" Height="18" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="77" Grid.Row="1"/>
+        <Label Content="Font size" HorizontalAlignment="Right" Margin="0,0,21,8" RenderTransformOrigin="0.342,-0.346" Grid.Row="1" Height="26" VerticalAlignment="Bottom" Width="57"/>
+    </Grid>
+</Window>
