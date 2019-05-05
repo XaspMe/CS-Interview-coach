@@ -75,7 +75,6 @@ namespace CS_Interview_coach
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             new Add().Show();
-            IsEnabled = false;
         }
 
         /// <summary>
