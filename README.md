@@ -17,8 +17,8 @@ QASource.xml with my content and the correct structure (in Russian) can be found
 
 Overview
 
-You can navigate between questions using the arrows on the interface and the arrows on the keyboard.
-To edit a question, click the Edith button and then Save.
+You can navigate between questions using the arrows on the interface or the arrows on the keyboard.
+To edit a question, click the edit button and then Save.
 You can change the size of the text on the frame using the slider at the bottom right.
 You can also add a new question using the Add Question button, then filling in the question and answer fields. Click the check mark below to save the question. After closing the adding window, the main QA list will be reset.
 

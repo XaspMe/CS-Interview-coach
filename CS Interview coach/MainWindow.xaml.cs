@@ -179,6 +179,11 @@ namespace CS_Interview_coach
             }
         }
 
+        /// <summary>
+        /// Hotkey binding.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Right)
