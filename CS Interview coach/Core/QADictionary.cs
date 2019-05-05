@@ -27,7 +27,7 @@ namespace CS_Interview_coach
         /// <summary>
         /// Reloading dictionary after changing XML file with questions and answers. 1 step - clear curent value, 2 step - read XML
         /// </summary>
-        public static void ReloadDictionary() 
+        public static void ReloadDictionary()
         {
             QADictionary.questionAndAnswers.Clear();
             new XMLWorker(System.IO.Directory.GetCurrentDirectory() + Properties.Settings.Default.XMLname).Read();
@@ -37,30 +37,39 @@ namespace CS_Interview_coach
         /// Randomly generating next instance and saving previous q. number. If XML is empty return null value.
         /// </summary>
         /// <returns></returns>
-        public static QAInstance GenerateNextQuestion() 
+        public static QAInstance GenerateNextQuestion()
         {
-            if(!(currentPos == 0))
-                Previous.Push(currentPos);
             if (QADictionary.questionAndAnswers.Count > 0)
             {
+                // Генерация нового вопроса.
                 int random = new Random().Next(0, QADictionary.questionAndAnswers.Count);
                 currentPos = random;
+                Previous.Push(random);
                 return new QAInstance(questionAndAnswers[random].Question, questionAndAnswers[random].Answer);
             }
-            else
-                return null;
+            else return null;
         }
 
         /// <summary>
         /// Function for returning to previuos question. Return null if stack count 0.
         /// </summary>
         /// <returns></returns>
-        public static QAInstance BackToPreviousQuestion()  
+        public static QAInstance BackToPreviousQuestion()
         {
-            if (!(Previous.Count == 0))
-                return questionAndAnswers[Previous.Pop()];
-            else 
+            if (Previous.Count == 0)
                 return null;
+            else
+            {
+                if (Previous.Peek() == currentPos)
+                {
+                    Previous.Pop();
+                    return questionAndAnswers[Previous.Pop()];
+                }
+                else
+                {
+                    return questionAndAnswers[Previous.Peek()];
+                }
+            }
         }
     }
 }
