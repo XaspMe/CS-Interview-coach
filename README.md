@@ -23,6 +23,11 @@ You can change the size of the text on the frame using the slider at the bottom 
 You can also add a new question using the Add Question button, then filling in the question and answer fields. Click the check mark below to save the question. After closing the adding window, the main QA list will be reset.
 
 
+TODO
+- Add mvvm architecture.
+- Replace QA dictionary class with collection shaker.
+
+
 Contributing
 
 Pull requests are welcome. 
