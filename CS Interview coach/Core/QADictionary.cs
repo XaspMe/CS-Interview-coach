@@ -23,7 +23,6 @@ namespace CS_Interview_coach
         /// </summary>
         public static Stack<int> Previous = new Stack<int>();
 
-
         /// <summary>
         /// Reloading dictionary after changing XML file with questions and answers. 1 step - clear curent value, 2 step - read XML
         /// </summary>
